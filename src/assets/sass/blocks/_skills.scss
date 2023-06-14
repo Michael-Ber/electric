@@ -1,0 +1,47 @@
+@import "../additional/mixins";
+@import "../additional/variables";
+
+.skills {
+
+    background-color: $section-light;
+
+    &__wrapper {
+    }
+
+    &__title {
+        color: #000;
+        font-size: 56px;
+        line-height: 72px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    &__item {
+        flex: 0 0 calc(100%/6 - 5*10px); 
+        background-color: #fff;
+    }
+
+    &__img {
+        width: 100%;
+        height: 150px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #000;
+        margin-top: 20px;
+    }
+}

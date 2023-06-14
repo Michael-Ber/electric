@@ -1,0 +1,52 @@
+@import '../sass//additional/variables';
+@import '../sass//additional/mixins';
+
+@import '../sass//blocks//header';
+@import '../sass/blocks/main';
+@import '../sass/blocks/skills';
+
+* {
+    @include ptsans;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    @media(max-width: $width1199) {
+        width: 960px;
+    };
+    @media(max-width: $width991) {
+        width: 720px;
+    };
+    @media(max-width: $width767) {
+        width: 540px;
+    };
+    @media(max-width: $width575) {
+        width: 100%;
+    };
+}
+
+.btn {
+    width: 200px;
+    padding: 10px 0;
+    color: #ffffff;
+    background-color: $light-blue;
+    transition: .2s all ease;
+    &:hover {
+        background-color: darken($light-blue, 10%);
+    }
+    @media(max-width: $width575) {
+        width: 150px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
