@@ -6,9 +6,10 @@
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(#000, .5);
+    background: rgba(#000, .9);
     padding: 10px;
     z-index: 1000;
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -80,7 +81,6 @@
 
 
     &__tel {
-        color: #ffffff;
         font-size: 18px;
         font-weight: 700;
     }

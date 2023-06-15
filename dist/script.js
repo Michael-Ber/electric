@@ -90,13 +90,95 @@
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./smoothScroll */ "./src/assets/js/smoothScroll.js");
 
 
-console.log("js working");
+
+window.addEventListener('DOMContentLoaded', () => {
+  console.log('scripts working');
+  Object(_smoothScroll__WEBPACK_IMPORTED_MODULE_0__["scroll"])({
+    arrowSelector: '.arrow-up',
+    arrowActiveClass: 'arrow-up_active'
+  });
+});
+
+/***/ }),
+
+/***/ "./src/assets/js/smoothScroll.js":
+/*!***************************************!*\
+  !*** ./src/assets/js/smoothScroll.js ***!
+  \***************************************/
+/*! exports provided: scroll */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scroll", function() { return scroll; });
+const scroll = _ref => {
+  let {
+    arrowSelector,
+    arrowActiveClass
+  } = _ref;
+  const links = document.querySelectorAll('[href^="#"]');
+  const speed = 0.2;
+  let arrow = document.querySelector(arrowSelector);
+  window.addEventListener('scroll', () => {
+    let fromTop = document.documentElement.scrollTop;
+    if (fromTop > 850) {
+      arrow.classList.add(arrowActiveClass);
+    } else {
+      arrow.classList.remove(arrowActiveClass);
+    }
+  });
+  arrow.addEventListener('click', function (e) {
+    e.preventDefault();
+    let toSection = -document.documentElement.scrollTop;
+    let fromTop = document.documentElement.scrollTop;
+    let start = null;
+    requestAnimationFrame(step);
+    function step(time) {
+      if (start === null) {
+        start = time;
+      }
+      let progress = time - start;
+      let r = toSection < 0 ? Math.max(fromTop - progress / speed, fromTop + toSection) : Math.min(fromTop + progress / speed, fromTop + toSection);
+      document.documentElement.scrollTo(0, r);
+      console.log(r, fromTop + toSection);
+      if (r != fromTop + toSection) {
+        requestAnimationFrame(step);
+      }
+    }
+  });
+  links.forEach(link => {
+    if (link.hash) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        let toSection = document.querySelector(link.hash).getBoundingClientRect().top - 100;
+        let fromTop = document.documentElement.scrollTop;
+        let start = null;
+        requestAnimationFrame(step);
+        function step(time) {
+          if (start === null) {
+            start = time;
+          }
+          let progress = time - start;
+          let r = toSection < 0 ? Math.max(fromTop - progress / speed, fromTop + toSection) : Math.min(fromTop + progress / speed, fromTop + toSection);
+          document.documentElement.scrollTo(0, r);
+          console.log(r, fromTop + toSection);
+          if (r != fromTop + toSection) {
+            requestAnimationFrame(step);
+          }
+        }
+      });
+    }
+  });
+};
+
 
 /***/ })
 

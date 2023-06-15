@@ -40,9 +40,7 @@
     }
 
     &__title {
-        @include museo;
         font-size:  70px;
-        font-weight: 700;
         color: #ffffff;
         margin-bottom: 30px;
         @media(max-width: $width991) {
@@ -54,6 +52,13 @@
         @media(max-width: $width575) {
             font-size: 20px;
         };
+    }
+
+    &__subtitle{
+        color: #fff;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 40px;
     }
 
     &__link {

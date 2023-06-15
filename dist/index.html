@@ -12,6 +12,14 @@
 </head>
 <body>
 
+    <!-- ARROW UP -->
+
+    <div class="arrow-up">
+        <img src="./assets/icons/arrow-up.svg" alt="стрелка вверх">
+    </div>
+
+    <!-- /ARROW UP -->
+
     <!-- HEADER -->
     
     <header class="header">
@@ -25,9 +33,9 @@
                 </div>
                 <div class="header__center">
                     <nav class="header__nav">
-                        <a href="#" class="header__link">Обо мне</a>
-                        <a href="#" class="header__link">Услуги и цены</a>
-                        <a href="#" class="header__link">Контакты</a>
+                        <a href="#about" class="header__link">Обо мне</a>
+                        <a href="#payment" class="header__link">Услуги и цены</a>
+                        <a href="#contacts" class="header__link">Контакты</a>
                     </nav>
                 </div>
                 <div class="header__right right-header">
@@ -50,13 +58,13 @@
                     </div>
                     <ul class="burger-menu">
                         <li class="burger-menu__item">
-                            <a href="#" class="header__link">Обо мне</a>
+                            <a href="#about" class="header__link">Обо мне</a>
                         </li>
                         <li class="burger-menu__item">
-                            <a href="#" class="header__link">Услуги и цены</a>
+                            <a href="#payment" class="header__link">Услуги и цены</a>
                         </li>
                         <li class="burger-menu__item">
-                            <a href="#" class="header__link">Контакты</a>
+                            <a href="#contacts" class="header__link">Контакты</a>
                         </li>
                     </ul>
                 </div>
@@ -74,8 +82,9 @@
     <section class="main">
         <div class="container">
             <div class="main__wrapper">
-                <h1 class="main__title">Электромонтажные работы</h1>
-                <a href="#" class="main__link btn">Подробнее <span></span></a>
+                <h2 class="main__title section-title">Услуги электрика</h2>
+                <h3 class="main__subtitle">Опыт работы более 20лет</h3>
+                <a href="./payment.html" class="main__link btn">Подробнее <span></span></a>
             </div>
         </div>
     </section>
@@ -85,10 +94,10 @@
 
     <!-- SKILLS -->
 
-    <section class="skills">
+    <section class="skills" id="payment">
         <div class="container">
             <div class="skills__wrapper">
-                <h1 class="skills__title">Что я могу</h1>
+                <h2 class="skills__title section-title">Что я могу</h2>
                 <ul class="skills__list">
                     <li class="skills__item">
                         <div class="skills__img"><img src="./assets/img/mounting-2.jpg" alt="электромонтажные работы"></div>
@@ -120,6 +129,113 @@
     </section>
 
     <!-- /SKILLS -->
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__wrapper">
+                <h2 class="about__title section-title">Обо мне</h2>
+                <p class="about__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quos, laboriosam labore ad quisquam, rerum impedit reiciendis ipsam enim laborum minima quaerat molestias. Iste aut repudiandae cumque, commodi consectetur reiciendis.</p>
+                <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolores. Veritatis ea, deserunt deleniti delectus quaerat rem ratione earum recusandae, quos blanditiis maxime aperiam minus voluptatem cumque odit cupiditate fuga!</p>
+                <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero dolorem asperiores eum adipisci non sed. Nobis incidunt numquam assumenda totam, animi et illo ipsam! Quae quod enim alias obcaecati?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- /ABOUT -->
+
+    <!-- CONTACTS -->
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="contacts__title section-title">Связаться со мной</h2>
+            <div class="contacts__wrapper">
+                <div class="contacts__left">
+                    <ul class="contacts__list">
+                        Ссылки для связи:
+                        <li class="contacts__item">
+                            <a href="https://whatsapp.com" class="contacts__link">
+                                <img src="./assets/icons/whatsapp.svg" alt="whatsapp">
+                            </a>
+                        </li>
+                        <li class="contacts__item">
+                            <a href="https://google.com" class="contacts__link">
+                                <img src="./assets/icons/viber.svg" alt="viber">
+                            </a>
+                        </li>
+                        <li class="contacts__item">
+                            <a href="htpps://google.com" class="contacts__link">
+                                <img src="./assets/icons/telegram.svg" alt="telegram">
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="contacts__mail">
+                        <span class="contacts__str">или оставьте свои контактные данные, используя форму <span class="contacts__finger">&#128073;</span></span>
+                    </p>
+                </div>
+                <div class="contacts__right">
+                    <form action="#" class="contacts__form">
+                        <input required type="text" name="name" id="name" placeholder="Контактное лицо" class="contacts__input">
+                        <input required type="tel" name="phone" id="phone" placeholder="Телефон" class="contacts__input">
+                        <input required type="email" name="email" id="email" placeholder="Электронная почта" class="contacts__input">
+                        <button type="submit" class="contacts__btn btn">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- /CONTACTS -->
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__social">
+                    
+                    <a href="https://whatsapp.com" class="footer__link">
+                        <img src="./assets/icons/whatsapp.svg" alt="whatsapp">
+                    </a>
+                
+                
+                    <a href="https://google.com" class="footer__link">
+                        <img src="./assets/icons/viber.svg" alt="viber">
+                    </a>
+                
+                
+                    <a href="https://google.com" class="footer__link">
+                        <img src="./assets/icons/telegram.svg" alt="telegram">
+                    </a>
+                    
+                </div>
+                <div class="footer__contacts contacts-footer">
+                    <div class="contacts-footer__addr addr-footer">
+                        <div class="addr-footer__item">
+                            <p class="addr-footer__title">Адрес</p>
+                            <p class="addr-footer__content">г.Братск, ул.Южная 50</p>
+                        </div>
+                        <div class="addr-footer__item">
+                            <p class="addr-footer__title">Телефон</p>
+                            <p class="addr-footer__content">
+                                <a href="tel:78888888888" class="addr-footer__link">+7 888 888-88-88</a>
+                            </p>
+                        </div>
+                        <div class="addr-footer__item">
+                            <p class="addr-footer__title">Электронная почта</p>
+                            <p class="addr-footer__content">
+                                <a href="mailto:test@test.test" class="addr-footer__link">test@test.test</a>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="contacts-footer__copyright">&#169; 2017-2023 гг. Джон До - Инженер-электрик</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- /FOOTER -->
     <script src="script.js"></script>
 </body>
 </html>

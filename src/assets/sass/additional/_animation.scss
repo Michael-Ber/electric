@@ -1,0 +1,16 @@
+@keyframes fingerAnimationHoriz {
+    from {
+        left: calc(100% + 10px);
+    }
+    to {
+        left: calc(100% + 20px);
+    }
+}
+@keyframes fingerAnimationVertical {
+    from {
+        top: calc(90% + 10px);
+    }
+    to {
+        top: calc(90% + 20px);
+    }
+}
