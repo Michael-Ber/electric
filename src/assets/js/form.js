@@ -20,7 +20,6 @@ export const handleSubmit = () => {
 
         const resp = sendReq('mailer/smart.php', dataObj);
         resp.then((res) => {
-            console.log(res);
             inputs.forEach(input => {
                 input.value = '';
             });
@@ -29,6 +28,9 @@ export const handleSubmit = () => {
             msg.classList.add('message_success');
             msg.innerHTML = 'Письмо отправлено. Скоро я с вами свяжусь.'
             form.appendChild(msg);
+            setTimeout(() => {
+                msg.classList.remove('message_success');
+            }, 5000)
         }).catch(() => {
             msg.classList.add('message_danger');
             msg.innerHTML = 'Произошла непредвиденная ошибка. Попробуйте еще раз.';
@@ -37,8 +39,6 @@ export const handleSubmit = () => {
             btn.innerHTML = 'Отправить';
         })
         
-        // setTimeout(() => {
-        //     msg.classList.remove('message_success message_danger');
-        // }, 5000)
+        
     })
 }
