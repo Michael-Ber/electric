@@ -86,6 +86,62 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/assets/js/form.js":
+/*!*******************************!*\
+  !*** ./src/assets/js/form.js ***!
+  \*******************************/
+/*! exports provided: handleSubmit */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleSubmit", function() { return handleSubmit; });
+/* harmony import */ var _sendRequest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sendRequest */ "./src/assets/js/sendRequest.js");
+
+
+
+const handleSubmit = () => {
+  const form = document.querySelector('.contacts__form');
+  const btn = form.querySelector('.btn');
+  const inputs = form.querySelectorAll('input');
+  const msg = document.createElement('div');
+  msg.classList.add('message');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    btn.innerHTML = '<div class="spinner"><img src="./assets/img/spinner.gif" alt="spinner"/></div>';
+    let dataObj = {};
+    inputs.forEach(input => {
+      dataObj = {
+        ...dataObj,
+        [input.name]: input.value
+      };
+    });
+    const resp = Object(_sendRequest__WEBPACK_IMPORTED_MODULE_0__["sendReq"])('mailer/smart.php', dataObj);
+    resp.then(res => {
+      console.log(res);
+      inputs.forEach(input => {
+        input.value = '';
+      });
+    }).then(() => {
+      msg.classList.add('message_success');
+      msg.innerHTML = 'Письмо отправлено. Скоро я с вами свяжусь.';
+      form.appendChild(msg);
+    }).catch(() => {
+      msg.classList.add('message_danger');
+      msg.innerHTML = 'Произошла непредвиденная ошибка. Попробуйте еще раз.';
+      form.appendChild(msg);
+    }).finally(() => {
+      btn.innerHTML = 'Отправить';
+    });
+
+    // setTimeout(() => {
+    //     msg.classList.remove('message_success message_danger');
+    // }, 5000)
+  });
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
@@ -96,16 +152,50 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _smoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./smoothScroll */ "./src/assets/js/smoothScroll.js");
+/* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./form */ "./src/assets/js/form.js");
+
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('scripts working');
   Object(_smoothScroll__WEBPACK_IMPORTED_MODULE_0__["scroll"])({
     arrowSelector: '.arrow-up',
     arrowActiveClass: 'arrow-up_active'
   });
+  Object(_form__WEBPACK_IMPORTED_MODULE_1__["handleSubmit"])();
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/sendRequest.js":
+/*!**************************************!*\
+  !*** ./src/assets/js/sendRequest.js ***!
+  \**************************************/
+/*! exports provided: sendReq */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendReq", function() { return sendReq; });
+
+
+const sendReq = async (url, data) => {
+  try {
+    let res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) {
+      throw new Error(`Could not fetch ${url}, status ${res.status}`);
+    }
+  } catch (e) {
+    throw e;
+  }
+  return await res;
+};
 
 /***/ }),
 

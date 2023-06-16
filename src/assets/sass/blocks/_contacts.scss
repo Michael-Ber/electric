@@ -3,6 +3,7 @@
 
 .contacts {
     padding: 30px 10px;
+    background-color: $section-light;
     &__title {
         margin-bottom: 50px;
         @media(max-width: $width575) {
@@ -38,9 +39,6 @@
         margin-left: 10px;
     }
 
-    &__link {
-    }
-
     &__mail {
         font-size: 20px;
         line-height: 28px;
@@ -61,6 +59,8 @@
         gap: 20px;
         width: 70%;
         margin: 0 auto;
+        // box-shadow: 0 0 20px rgba(#000, .5);
+        // padding: 20px;
         @media(max-width: 420px) {
             width: 100%;
         }

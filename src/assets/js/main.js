@@ -1,8 +1,9 @@
 'use strict';
 
 import { scroll } from "./smoothScroll";
+import { handleSubmit } from "./form";
 
 window.addEventListener('DOMContentLoaded', () => {
-    console.log('scripts working')
-    scroll({arrowSelector: '.arrow-up', arrowActiveClass: 'arrow-up_active'})
+    scroll({arrowSelector: '.arrow-up', arrowActiveClass: 'arrow-up_active'});
+    handleSubmit();
 })

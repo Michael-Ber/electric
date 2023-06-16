@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
-  padding: 10px;
+  padding: 20px 10px;
   z-index: 1000;
 }
 .header__wrapper {
@@ -206,10 +206,20 @@
   }
 }
 .main__subtitle {
+  position: relative;
   color: #fff;
   font-size: 24px;
   line-height: 36px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+.main__subtitle::before {
+  content: url("./assets/icons/check.svg");
+  position: absolute;
+  top: 2px;
+  right: calc(100% + 10px);
+  width: 20px;
+  height: 20px;
 }
 .main__link {
   display: flex;
@@ -276,7 +286,7 @@
 
 .skills {
   background-color: #f8f8f8;
-  padding: 50px 10px;
+  padding: 50px 10px 80px 10px;
 }
 .skills__title {
   font-family: "MuseoModerno", cursive;
@@ -303,28 +313,28 @@
 .skills__item {
   position: relative;
   flex: 1 0 calc(16.6666666667% - 50px);
+  height: 200px;
+  padding: 20px 10px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
 }
 @media (max-width: 991px) {
   .skills__item {
     flex: 0 0 200px;
   }
 }
-.skills__item:hover > p {
-  opacity: 1;
+.skills__item:hover {
+  opacity: 0.7;
 }
 .skills__img {
   width: 100%;
-  height: 150px;
+  height: 80px;
 }
 .skills__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
-.skills__descr {
+.skills__descr-first-var {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -342,6 +352,13 @@
   background-color: rgba(0, 0, 0, 0.8);
   transition: 0.2s all ease;
   opacity: 0;
+}
+.skills__descr-sec-var {
+  font-family: "MuseoModerno", cursive;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .about {
@@ -400,16 +417,9 @@
     left: calc(100% + 20px);
   }
 }
-@keyframes fingerAnimationVertical {
-  from {
-    top: calc(90% + 10px);
-  }
-  to {
-    top: calc(90% + 20px);
-  }
-}
 .contacts {
   padding: 30px 10px;
+  background-color: #f8f8f8;
 }
 .contacts__title {
   margin-bottom: 50px;
@@ -645,6 +655,30 @@
   .btn {
     width: 150px;
   }
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+.spinner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message {
+  display: none;
+  font-size: 16px;
+}
+.message_success {
+  display: block;
+  color: green;
+}
+.message_danger {
+  display: block;
+  color: red;
 }
 
 .section-title {
