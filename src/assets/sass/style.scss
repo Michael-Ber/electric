@@ -81,7 +81,7 @@
     line-height: 72px;
     font-weight: 700;
     @media(max-width: $width575) {
-        font-size: 40px;
+        font-size: 36px;
         line-height: 56px;
     }
 }
@@ -89,8 +89,8 @@
 .arrow-up {
     display: none;
     position: fixed;
-    top: 90%;
-    left: 95%;
+    top: 80%;
+    right: 5%;
     width: 50px;
     height: 50px;
     cursor: pointer;
@@ -101,6 +101,9 @@
     }
     &_active {
         display: block;
+    }
+    @media(max-width: $width991) {
+        display: none;
     }
 }
 

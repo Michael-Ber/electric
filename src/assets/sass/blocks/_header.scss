@@ -36,24 +36,26 @@
         }
     }
 
+    &__left {
+        @media(max-width: $width767) {
+            order: 1;
+        }
+    }
+
     &__right {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media(max-width: $width767) {
+            order: 3;
+        }
         @media(max-width: $width575) {
             display: none;
         }
     }
 
     &__burger {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        height: 100%;
-        @media(max-width: $width575) {
-            left: unset;
-            right: 30px;
-        }
+        order: 2;
     }
 }
 .logo-header {
@@ -127,12 +129,20 @@
     @media(max-width: 767px) {
         display: block;
     }
+    @media(max-width: $width575) {
+        left: unset;
+        right: 0;
+    }
 }
 .burger-menu {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(-100%, 0);
+    width: 50%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,26 +150,48 @@
     padding: 20px;
     list-style: none;
     z-index: 10;
-    background-color: #fff;
+    background-color: $black;
     transition: .3s all;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    
     @media(max-width: 991px) {
         &_active {
-            transform: translateY(0);
+            transform: translate(0, 0);
             box-shadow: 0 0 10px #000;
         }
     }
-}
-
-.burger-menu__link {
-    color: #000;
-    text-decoration: none;
-    &:hover {
-        color: lighten(#000, 40%);
+    @media(max-width: $width575) {
+        width: 100%;
     }
 }
+
+.burger-menu {
+    &__item {
+        &:nth-child(n):not(:last-child) {
+            margin-bottom: 20px;
+        }
+        a {
+            font-size: 22px;
+            
+        }
+    }
+
+    &__social {
+        margin-top: 40px;
+       
+    }
+    &__link {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            color: lighten(#000, 40%);
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        color: #ffffff;
+        font-size: 22px;
+    }
+}
+
+

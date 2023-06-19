@@ -8,13 +8,14 @@ const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
 const imagemin = require('gulp-imagemin');
-
+const htmlmin = require('gulp-htmlmin');
 
 // const dist = "../../../../js/OpenServer/domains/logo";
 const dist = "./dist";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/*.html")
+                .pipe(htmlmin({ collapseWhitespace: true }))
                 .pipe(gulp.dest(dist))
                 .pipe(browsersync.stream());
 });
