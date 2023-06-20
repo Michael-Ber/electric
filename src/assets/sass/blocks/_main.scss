@@ -40,18 +40,8 @@
     }
 
     &__title {
-        font-size:  70px;
         color: #ffffff;
         margin-bottom: 30px;
-        @media(max-width: $width991) {
-            font-size: 50px;
-        };
-        @media(max-width: $width767) {
-            font-size: 40px;
-        };
-        @media(max-width: $width575) {
-            font-size: 20px;
-        };
     }
 
     &__subtitle{
@@ -63,7 +53,6 @@
         margin-left: 30px;
         &::before {
             content: url('./assets/icons/check.svg');
-            // display: block;
             position: absolute;
             top: 2px;
             right: calc(100% + 10px);

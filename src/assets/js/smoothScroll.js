@@ -9,14 +9,17 @@ const scroll = ({
     
     window.addEventListener('scroll', () => {
         let fromTop = document.documentElement.scrollTop;
-        if(fromTop > 850) {
-            arrow.classList.add(arrowActiveClass);
-        }else {
-            arrow.classList.remove(arrowActiveClass);
+        if(arrow) {
+            if(fromTop > 850) {
+                arrow.classList.add(arrowActiveClass);
+            }else {
+                arrow.classList.remove(arrowActiveClass);
+            }
         }
+        
     });
 
-    arrow.addEventListener('click', function(e) {
+    arrow && arrow.addEventListener('click', function(e) {
         e.preventDefault();
         let toSection = - document.documentElement.scrollTop;
         let fromTop = document.documentElement.scrollTop;
