@@ -2,11 +2,19 @@
     padding: 150px 10px;
     font-size: 18px;
     line-height: 26px;
+    @media(max-width: $width575) {
+        font-size: 14px;
+        line-height: 22px;
+    }
     &__title {
         font-size: 36px;
         line-height: 48px;
         text-align: center;
         margin-bottom: 20px;
+        @media(max-width: $width575) {
+            font-size: 24px;
+            line-height: 36px;
+        }
     }
 
     &__paragraph {
@@ -15,6 +23,7 @@
     }
 
     &__list {
+        list-style: decimal inside;
     }
 
     &__list-item {

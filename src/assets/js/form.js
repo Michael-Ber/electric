@@ -19,7 +19,7 @@ export const handleSubmit = () => {
                 dataObj = {...dataObj, [input.name]: input.value}
             })
 
-            const resp = sendReq('mailer/smart.php', dataObj);
+            const resp = sendReq('./mailer/smart.php', dataObj);
             resp.then(() => {
                 inputs.forEach(input => {
                     input.value = '';
