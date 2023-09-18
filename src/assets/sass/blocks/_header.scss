@@ -35,6 +35,11 @@
         &:hover {
             color: #ffffff;
         }
+        span {
+            @media(max-width: $width991) {
+                display: none;
+            }
+        }
     }
 
     &__left {
@@ -60,14 +65,28 @@
     }
 }
 .logo-header {
-
+    position: relative;
+    display: flex;
     &__name {
         @include museo;
+        font-size: 20px;
         color: #ffffff;
     }
     &__prof {
         color: $light-gray;
     }   
+    &::before {
+        content: '';
+        // position: absolute;
+        // left: -70px;
+        // top: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-right: 20px;
+        background: url('./assets/icons/logo.png') center center/cover no-repeat, #ffffff;
+    }
 }
 .right-header {
 

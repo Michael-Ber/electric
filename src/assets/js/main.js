@@ -8,4 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     scroll({arrowSelector: '.arrow-up', arrowActiveClass: 'arrow-up_active'});
     handleSubmit();
     burger();
+
+    console.log(document.querySelector('.header__link span'))
 })

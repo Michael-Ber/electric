@@ -37,13 +37,22 @@
             text-align: center;
         }
     }
-
-    &__text {
+    &__list {
+        @media(max-width: $width575) {
+            padding: 0 25px;
+        }
+    }
+    &__list-item {
         font-size: 22px;
         line-height: 28px;
         color: #fff;
+        list-style-type:disc;
         &:nth-child(n):not(:last-child) {
             margin-bottom: 30px;
+        }
+        @media(max-width: $width575) {
+            font-size: 18px;
+            line-height: 24px;
         }
     }
 }
