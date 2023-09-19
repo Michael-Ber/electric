@@ -49,7 +49,7 @@
         border-top: 2px solid #fff;
         padding-top: 20px;
         margin-top: 20px;
-        @media(max-width: $width480) {
+        @media(max-width: $width520) {
             flex-direction: column;
             align-items: center;
         }
@@ -59,7 +59,7 @@
         color: #fff;
         margin-top: 50px;
         font-size: 12px;
-        @media(max-width: $width480) {
+        @media(max-width: $width520) {
             text-align: center;
         }
     }
@@ -69,7 +69,11 @@
     &__item {
         color: #fff;
         font-size: 18px;
-        @media(max-width: $width480) {
+        @media(max-width: $width575) {
+            padding: 5px 0;
+            font-size: 16px;
+        }
+        @media(max-width: $width520) {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -80,15 +84,18 @@
     &__title {
         font-weight: 700;
         margin-bottom: 20px;
-        @media(max-width: $width480) {
+        font-size: 20px;
+        @media(max-width: $width520) {
             margin-bottom: 0;
+            font-size: 18px;
         }
     }
 
     &__content {
-        font-size: 16px;
-        @media(max-width: $width480) {
-            margin-left: 50px;
+        font-size: 18px;
+        @media(max-width: $width520) {
+            font-size: 16px;
+            width: 200px;
         }
     }
 
