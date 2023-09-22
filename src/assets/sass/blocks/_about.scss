@@ -43,16 +43,21 @@
         }
     }
     &__list-item {
-        font-size: 22px;
-        line-height: 28px;
-        color: #fff;
         list-style-type:disc;
+        color: #fff;
+        h2 {
+            font-size: 22px;
+            line-height: 28px;
+        }
         &:nth-child(n):not(:last-child) {
             margin-bottom: 30px;
         }
         @media(max-width: $width575) {
-            font-size: 18px;
-            line-height: 24px;
+            h2 {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            
         }
     }
 }
