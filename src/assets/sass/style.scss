@@ -8,6 +8,7 @@
 @import '../sass/blocks/contacts';
 @import '../sass/blocks/footer';
 @import '../sass/blocks/privacy';
+@import '../sass/blocks/404';
 
 * {
     @include ptsans;
@@ -19,18 +20,30 @@
 .container {
     width: 1180px;
     margin: 0 auto;
+
     @media(max-width: $width1199) {
         width: 960px;
-    };
+    }
+
+    ;
+
     @media(max-width: $width991) {
         width: 720px;
-    };
+    }
+
+    ;
+
     @media(max-width: $width767) {
         width: 540px;
-    };
+    }
+
+    ;
+
     @media(max-width: $width575) {
         width: 100%;
-    };
+    }
+
+    ;
 }
 
 .btn {
@@ -44,9 +57,11 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+
     &:hover {
         background-color: darken($light-blue, 10%);
     }
+
     @media(max-width: $width575) {
         width: 150px;
     }
@@ -56,6 +71,7 @@
     width: 30px;
     height: 30px;
     margin: 0 auto;
+
     img {
         width: 100%;
         height: 100%;
@@ -66,10 +82,12 @@
 .message {
     display: none;
     font-size: 16px;
+
     &_success {
         display: block;
         color: green;
     }
+
     &_danger {
         display: block;
         color: red;
@@ -81,10 +99,12 @@
     font-size: 56px;
     line-height: 72px;
     font-weight: 700;
+
     @media(max-width: $width767) {
         font-size: 40px;
         line-height: 60px;
     }
+
     @media(max-width: $width575) {
         font-size: 30px;
         line-height: 56px;
@@ -99,14 +119,17 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
     &_active {
         display: block;
     }
+
     @media(max-width: $width991) {
         display: none;
     }
@@ -115,6 +138,7 @@
 a {
     color: darken(#fff, 20%);
     text-decoration: none;
+
     &:hover {
         color: #fff;
     }

@@ -772,6 +772,29 @@
   margin-bottom: 20px;
 }
 
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page-404__title {
+  font-size: 120px;
+}
+.page-404__subtitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.page-404__back {
+  color: rgb(56, 56, 248);
+  font-size: 20px;
+}
+.page-404__back:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
 * {
   font-family: "PT Sans", sans-serif;
   box-sizing: border-box;

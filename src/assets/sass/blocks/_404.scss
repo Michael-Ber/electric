@@ -1,0 +1,27 @@
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__title {
+        font-size: 120px;
+
+    }
+
+    &__subtitle {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    &__back {
+        color: rgb(56, 56, 248);
+        font-size: 20px;
+
+        &:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+    }
+}
